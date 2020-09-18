@@ -4,7 +4,9 @@ JavaScript-based Media Queries for Vue 3. Internally uses `window.matchMedia` an
 
 ## Installation
 
-`npm i vue-next-breakpoints`
+NPM: `npm i vue-next-breakpoints`
+
+Yarn: `yarn add vue-next-breakpoints`
 
 ## Usage
 
@@ -20,17 +22,22 @@ import useBreakpoints from "vue-next-breakpoints";
 export default {
     name: "YourComponent",
     setup() {
+        // Define your breakpoints with any name
         const breakpoints = useBreakpoints({
             mobile: 600, // max-width: 600px
             desktop: [601] // min-width: 601px
         });
 
         return {
+            // If you want to use different key, feel free do do so, e.g.:
+            // mediaqueries: breakpoints
+            // and then use mediaqueries.desktop.matches etc.
             breakpoints
         };
     },
     created() {
-        // You can use the breakpoints constant directly in the setup method as well
+        // Event listeners are optional but may come in handy.
+        // You can register them inside setup, created or mounted methods.
         this.breakpoints.mobile.on("enter", (mq) => {
             console.log("Entered mobile breakpoint");
             console.log("Media Query", mq);
@@ -69,7 +76,7 @@ Each of the specified media queries have `.matches` property which is either `tr
 
 ### 3. Assigning event listeners
 
-There are two types of listeners: `"enter"` and `"leave"` and these can be assigned to any media query previously configured
+In most cases using `.matches` property will be enough, but if you want to listen for the specific breakpoint, there are two types of listeners: `"enter"` and `"leave"` and these can be assigned to any media query previously configured.
 
 ```javascript
 const enterCallback = (mq) => {
