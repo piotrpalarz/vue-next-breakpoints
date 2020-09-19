@@ -1,6 +1,6 @@
 {
     "name": "vue-next-breakpoints",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Vue 3 Breakpoints using window.matchMedia and the Composition API",
     "main": "src/index.js",
     "directories": {
@@ -18,8 +18,7 @@
         "vue3",
         "breakpoints",
         "matchmedia",
-        "composition",
-        "api"
+        "composition api"
     ],
     "author": "Piotr Palarz",
     "license": "MIT",
@@ -28,7 +27,7 @@
     },
     "homepage": "https://github.com/piotrpalarz/vue-next-breakpoints#readme",
     "dependencies": {
-        "vue": "^3.0.0-rc.12"
+        "vue": "^3.0.0"
     },
     "devDependencies": {
         "@babel/core": "^7.11.6",
